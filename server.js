@@ -1,8 +1,11 @@
 const app = require('./app');
 
-const PORT = 8000;
+const dbCongig  = require('./src/configs/server.config');  
+require('./src/configs/db.config');
 
-app.listen(PORT,()=>{
-    console.log(`Running On ${PORT}`);
+//const PORT = 8000;
+
+app.listen(dbCongig.PORT,()=>{
+    console.log(`Running On ${dbCongig.PORT}`);
 });
 
