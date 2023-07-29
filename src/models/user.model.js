@@ -1,48 +1,35 @@
-// const mongo = require('mongoose');
-
-// const Users = mongo.Schema({
-//     name:{
-//         typeof:String,
-    
-//     },
-//     email:{
-//         typeof:String,
-    
-//     },
-//     contactNumber:{
-//         typeof:Number,
-    
-//     },
-//     collegeName:{
-//         typeof:String,
-    
-//     },
-//     course:{
-//         typeof:String,
-    
-//     },
-//     passingYear:{
-//         typeof:Number,
-    
-//     }
-// });
-
-// const Data = mongo.model("User", Users);
-
-// module.exports = Data;
-
 const mongo = require('mongoose');
 
-const datas = mongo.Schema({
+const UserSch = new mongo.Schema({
     name:{
-        typeof:String
+        type:String
     },
-    rollnumber:{
-        typeof:Number
+    number:{
+        type:Number
+    },
+    email:{
+        type:String
+    },
+    collegeName:{
+        type:String
+    },
+    course:{
+        type:String
+    },
+    passingYear:{
+        type:Number
     }
 });
 
+const User = mongo.model("userdata",UserSch);
 
-const data = mongo.model('data',datas);
+module.exports = User;
 
-module.exports = data;
+// {
+//     "name":"Antar",
+//     "email":"ab@gamil.com",
+//     "contactNumber":34556,
+//     "collegeName":"abc",
+//     "course":"bc",
+//     "passingYear":2000
+//   }
